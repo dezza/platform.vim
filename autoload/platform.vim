@@ -1,3 +1,6 @@
+" TODO: vars make local to script
+
+function platform#detect()
   let g:platform = 0
   let g:distro = 0
   " more distros to detect:
@@ -28,3 +31,6 @@
   else
       let g:platform='Unknown'
   endif
+endfunction
+
+" TODO: platform#get function?
