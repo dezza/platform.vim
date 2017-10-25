@@ -18,6 +18,9 @@ function platform#detect()
   elseif has('mac')
       let g:platform='Darwin'
       let g:distro='OS X'
+      if has('transparency') && has('odbeditor') && has('gui_running')
+        let g:distro='MacVim'
+      endif
   elseif exists('g:uname') && g:uname ==# 'FreeBSD'
       let g:platform='FreeBSD'
       let g:distro='FreeBSD'
