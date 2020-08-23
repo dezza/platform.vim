@@ -9,7 +9,7 @@ function platform#detect()
   let g:slash='/'
   if filereadable('/etc/debian_version')
       let g:platform='Linux'
-      if !empty(system("grep 'Microsoft' '/proc/version' 2>/dev/null"))
+      if !empty(system("grep -F -i 'Microsoft' '/proc/version' 2>/dev/null"))
         " Windows Subsystem for Linux
         let g:distro='WSL'
       else
